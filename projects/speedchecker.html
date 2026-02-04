@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedChecker - Mini 4WD Speedometer | 3249Craft</title>
+    <meta name="description" content="A portable speedometer device for Mini 4WD cars. Real-time speed measurement, dyno graph analysis, and lap timing.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">
+                <span class="logo-icon">&#127967;</span>
+                3249Craft
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#specs">Specs</a></li>
+                <li><a href="#hardware">Hardware</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="https://github.com/3249Craft/SpeedChecker" class="nav-icon-link" target="_blank"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero project-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <a href="../" class="breadcrumb">&larr; Back to 3249Craft</a>
+                    <span class="badge">v0.0.1b - Beta</span>
+                    <h1>SpeedChecker</h1>
+                    <p class="hero-desc">A portable speedometer device designed for measuring real-time speed, analyzing acceleration, and timing laps during Mini 4WD testing and racing sessions.</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/3249Craft/SpeedChecker" class="btn btn-primary" target="_blank">
+                            View on GitHub
+                        </a>
+                        <a href="#features" class="btn btn-secondary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="device-mockup">
+                        <div class="oled-screen">
+                            <div class="screen-header">Speedometer</div>
+                            <div class="screen-speed">42.5</div>
+                            <div class="screen-unit">km/h</div>
+                            <div class="screen-max">MAX: 58.2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-desc">Everything you need for precise speed measurement and performance analysis</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128200;</div>
+                        <h3>Real-Time Speed</h3>
+                        <p>Measure speeds from 0-99 km/h with 0.1 km/h resolution. Supports multiple units: km/h, mph, m/s, RPM.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128202;</div>
+                        <h3>Dyno Graph</h3>
+                        <p>10-second acceleration graph with auto-scaling Y-axis. Calculates acceleration in m/s² and tracks time-to-peak.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#9201;</div>
+                        <h3>Lap Timer</h3>
+                        <p>Stopwatch functionality with support for up to 5 lap times. High-frequency 100 FPS display updates.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128268;</div>
+                        <h3>Max Tracking</h3>
+                        <p>Automatically tracks and displays maximum speed reached. Easy reset for new measurement sessions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128187;</div>
+                        <h3>Dual Display</h3>
+                        <p>Supports both 128x64 and 128x32 OLED displays with adaptive UI that optimizes for screen size.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#9881;</div>
+                        <h3>Configurable</h3>
+                        <p>Adjustable wheel diameter, spoke count, smoothing factor, and update intervals for accurate calibration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-desc">Simple yet sophisticated speed measurement using optical sensing</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Optical Detection</h3>
+                            <p>The QRE1113 reflective sensor detects wheel spokes passing by, generating pulses on each detection.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Interrupt Capture</h3>
+                            <p>Pulses are captured via hardware interrupt with 120µs debounce filtering for noise immunity.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Speed Calculation</h3>
+                            <p>Speed is computed from pulse timing using dual algorithms, then smoothed with exponential moving average.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Display Output</h3>
+                            <p>Results update on the OLED display every 400ms with real-time speed, max tracking, and visual feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs Section -->
+        <section id="specs" class="specs">
+            <div class="container">
+                <h2 class="section-title">Technical Specifications</h2>
+                <p class="section-desc">Detailed performance metrics and capabilities</p>
+
+                <div class="specs-grid">
+                    <div class="spec-group">
+                        <h3>Performance</h3>
+                        <dl class="spec-list">
+                            <div class="spec-item">
+                                <dt>Speed Range</dt>
+                                <dd>1 - 99 km/h</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Resolution</dt>
+                                <dd>0.1 km/h</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Accuracy</dt>
+                                <dd>±5% at >5 km/h</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Response Latency</dt>
+                                <dd>&lt;500ms</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Update Frequency</dt>
+                                <dd>400ms (2.5 Hz)</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="spec-group">
+                        <h3>Display Units</h3>
+                        <dl class="spec-list">
+                            <div class="spec-item">
+                                <dt>km/h</dt>
+                                <dd>Kilometers per hour</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>mph</dt>
+                                <dd>Miles per hour</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>m/s</dt>
+                                <dd>Meters per second</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>RPM</dt>
+                                <dd>Revolutions per minute</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Signals/s</dt>
+                                <dd>Raw sensor signals</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="spec-group">
+                        <h3>Software</h3>
+                        <dl class="spec-list">
+                            <div class="spec-item">
+                                <dt>Language</dt>
+                                <dd>C++ (Arduino)</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Libraries</dt>
+                                <dd>Adafruit GFX, SSD1306</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Architecture</dt>
+                                <dd>Interrupt-driven</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Filtering</dt>
+                                <dd>EMA (α=0.3)</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>License</dt>
+                                <dd>MIT</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware Section -->
+        <section id="hardware" class="hardware">
+            <div class="container">
+                <h2 class="section-title">Hardware Requirements</h2>
+                <p class="section-desc">Simple components for an easy build</p>
+
+                <div class="hardware-content">
+                    <div class="bom-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Description</th>
+                                    <th>Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arduino Pro Micro</td>
+                                    <td>ATmega32U4, 5V/16MHz</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>OLED Display</td>
+                                    <td>SSD1306, 128x64 or 128x32, I2C</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>QRE1113 Sensor</td>
+                                    <td>Reflective optical sensor</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Tactile Buttons</td>
+                                    <td>6mm push buttons</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>Resistors</td>
+                                    <td>10kΩ pull-up resistors</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="wiring-diagram">
+                        <h3>Pin Connections</h3>
+                        <div class="wiring-list">
+                            <div class="wiring-item">
+                                <span class="pin">D2 (SDA)</span>
+                                <span class="arrow">→</span>
+                                <span class="component">OLED SDA</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D3 (SCL)</span>
+                                <span class="arrow">→</span>
+                                <span class="component">OLED SCL</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D1 (INT3)</span>
+                                <span class="arrow">→</span>
+                                <span class="component">QRE1113 OUT</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D4</span>
+                                <span class="arrow">→</span>
+                                <span class="component">Button 1 (Prev)</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D5</span>
+                                <span class="arrow">→</span>
+                                <span class="component">Button 2 (Next)</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D6</span>
+                                <span class="arrow">→</span>
+                                <span class="component">Button 3 (Action)</span>
+                            </div>
+                            <div class="wiring-item">
+                                <span class="pin">D7</span>
+                                <span class="arrow">→</span>
+                                <span class="component">Button 4 (Action)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section id="docs" class="docs">
+            <div class="container">
+                <h2 class="section-title">Documentation</h2>
+                <p class="section-desc">Resources to get you started</p>
+
+                <div class="docs-grid">
+                    <a href="https://github.com/3249Craft/SpeedChecker#readme" class="doc-card" target="_blank">
+                        <div class="doc-icon">&#128196;</div>
+                        <h3>README</h3>
+                        <p>Project overview, setup instructions, and configuration guide.</p>
+                    </a>
+                    <a href="https://github.com/3249Craft/SpeedChecker/blob/main/SpeedChecker/config.h" class="doc-card" target="_blank">
+                        <div class="doc-icon">&#9881;</div>
+                        <h3>Configuration</h3>
+                        <p>All adjustable parameters for calibration and customization.</p>
+                    </a>
+                    <a href="https://github.com/3249Craft/SpeedChecker/issues" class="doc-card" target="_blank">
+                        <div class="doc-icon">&#128172;</div>
+                        <h3>Issues</h3>
+                        <p>Report bugs, request features, or ask questions.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Build?</h2>
+                <p>Get the source code and start building your own SpeedChecker device.</p>
+                <a href="https://github.com/3249Craft/SpeedChecker" class="btn btn-primary btn-large" target="_blank">
+                    Get Started on GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#127967;</span>
+                    <span>3249Craft</span>
+                </div>
+                <p class="footer-copyright">
+                    &copy; 2026 3249Craft. Released under the MIT License.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
