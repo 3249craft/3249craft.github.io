@@ -80,14 +80,16 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text);
 }
 
-.logo-icon {
-    font-size: 1.5rem;
+.logo-img {
+    height: 36px;
+    width: auto;
+}
+
+.footer-logo-img {
+    height: 28px;
+    width: auto;
 }
 
 .nav-links {
