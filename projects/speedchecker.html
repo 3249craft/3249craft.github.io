@@ -52,10 +52,10 @@
                 <div class="hero-visual">
                     <div class="device-mockup">
                         <div class="oled-screen">
-                            <div class="screen-header">Speedometer</div>
+                            <div class="screen-header">SpeedoMeter</div>
                             <div class="screen-speed">42.5</div>
                             <div class="screen-unit">km/h</div>
-                            <div class="screen-max">MAX: 58.2</div>
+                            <div class="screen-max">Peak: 58.2 | TT15: 1.23s</div>
                         </div>
                     </div>
                 </div>
@@ -72,32 +72,32 @@
                     <div class="feature-card">
                         <div class="feature-icon">&#128200;</div>
                         <h3>Real-Time Speed</h3>
-                        <p>Measure speeds from 0-99 km/h with 0.1 km/h resolution. Supports multiple units: km/h, mph, m/s, RPM.</p>
+                        <p>Measure speeds from 0-99 km/h with 0.1 resolution. Supports 5 units: km/h, mph, m/s, RPM, and signals/s.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">&#128202;</div>
                         <h3>Dyno Graph</h3>
-                        <p>10-second acceleration graph with auto-scaling Y-axis. Calculates acceleration in m/s² and tracks time-to-peak.</p>
+                        <p>10-second acceleration recording with dynamic Y-axis scaling (20-120 km/h). Tracks time-to-peak speed.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">&#9201;</div>
                         <h3>Lap Timer</h3>
-                        <p>Stopwatch functionality with support for up to 5 lap times. High-frequency 100 FPS display updates.</p>
+                        <p>Stopwatch with support for up to 5 lap times. High-frequency 100 FPS display for smooth timing.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">&#128268;</div>
-                        <h3>Max Tracking</h3>
-                        <p>Automatically tracks and displays maximum speed reached. Easy reset for new measurement sessions.</p>
+                        <h3>Performance Analysis</h3>
+                        <p>Peak speed tracking, TT15/TT30 time-to-speed measurements, live acceleration (m/s²), and speed gauge bar.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">&#128187;</div>
                         <h3>Dual Display</h3>
-                        <p>Supports both 128x64 and 128x32 OLED displays with adaptive UI that optimizes for screen size.</p>
+                        <p>Supports both 128x64 and 128x32 OLED displays with adaptive UI, button sidebar hints, and menu headers.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">&#9881;</div>
                         <h3>Configurable</h3>
-                        <p>Adjustable wheel diameter, spoke count, smoothing factor, and update intervals for accurate calibration.</p>
+                        <p>Adjustable wheel diameter, spoke count, EMA smoothing, gauge scaling, auto-reset idle timer, and debug mode.</p>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h3>Speed Calculation</h3>
-                            <p>Speed is computed from pulse timing using dual algorithms, then smoothed with exponential moving average.</p>
+                            <p>Dual algorithms: pulse count method for high speeds, interval method for low speeds. Filtered with EMA smoothing (&#945;=0.3) and &#177;15 km/h delta limiter.</p>
                         </div>
                     </div>
                     <div class="step">
@@ -161,16 +161,16 @@
                                 <dd>0.1 km/h</dd>
                             </div>
                             <div class="spec-item">
-                                <dt>Accuracy</dt>
-                                <dd>±5% at >5 km/h</dd>
-                            </div>
-                            <div class="spec-item">
-                                <dt>Response Latency</dt>
-                                <dd>&lt;500ms</dd>
-                            </div>
-                            <div class="spec-item">
-                                <dt>Update Frequency</dt>
+                                <dt>Update Interval</dt>
                                 <dd>400ms (2.5 Hz)</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Debounce</dt>
+                                <dd>120&#181;s pulse filter</dd>
+                            </div>
+                            <div class="spec-item">
+                                <dt>Stopwatch FPS</dt>
+                                <dd>100 (10ms refresh)</dd>
                             </div>
                         </dl>
                     </div>
@@ -194,8 +194,8 @@
                                 <dd>Revolutions per minute</dd>
                             </div>
                             <div class="spec-item">
-                                <dt>Signals/s</dt>
-                                <dd>Raw sensor signals</dd>
+                                <dt>sig/s</dt>
+                                <dd>Sensor signals per second</dd>
                             </div>
                         </dl>
                     </div>
@@ -212,11 +212,11 @@
                             </div>
                             <div class="spec-item">
                                 <dt>Architecture</dt>
-                                <dd>Interrupt-driven</dd>
+                                <dd>Interrupt-driven ISR</dd>
                             </div>
                             <div class="spec-item">
                                 <dt>Filtering</dt>
-                                <dd>EMA (α=0.3)</dd>
+                                <dd>EMA + delta limiter</dd>
                             </div>
                             <div class="spec-item">
                                 <dt>License</dt>
@@ -267,7 +267,7 @@
                                 </tr>
                                 <tr>
                                     <td>Resistors</td>
-                                    <td>10kΩ pull-up resistors</td>
+                                    <td>10k&#937; pull-up (optional, uses INPUT_PULLUP)</td>
                                     <td>4</td>
                                 </tr>
                             </tbody>
@@ -295,22 +295,22 @@
                             <div class="wiring-item">
                                 <span class="pin">D4</span>
                                 <span class="arrow">→</span>
-                                <span class="component">Button 1 (Prev)</span>
+                                <span class="component">Button 1 (Unit/Start)</span>
                             </div>
                             <div class="wiring-item">
                                 <span class="pin">D5</span>
                                 <span class="arrow">→</span>
-                                <span class="component">Button 2 (Next)</span>
+                                <span class="component">Button 2 (Reset/Lap)</span>
                             </div>
                             <div class="wiring-item">
                                 <span class="pin">D6</span>
                                 <span class="arrow">→</span>
-                                <span class="component">Button 3 (Action)</span>
+                                <span class="component">Button 3 (Prev Menu)</span>
                             </div>
                             <div class="wiring-item">
                                 <span class="pin">D7</span>
                                 <span class="arrow">→</span>
-                                <span class="component">Button 4 (Action)</span>
+                                <span class="component">Button 4 (Next Menu)</span>
                             </div>
                         </div>
                     </div>
